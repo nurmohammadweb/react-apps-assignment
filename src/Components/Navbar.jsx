@@ -2,13 +2,18 @@ import React from 'react';
 import { Link } from 'react-router';
 import { FaGithub } from "react-icons/fa";
 import logoImg from '../assets/logo.png'
+import { FaHome } from "react-icons/fa";
+import { FaAppStore } from "react-icons/fa";
+import { MdInstallDesktop } from "react-icons/md";
+
 
 
 const Navbar = () => {
   const links = <>
-   <Link to="/"> <li className='m-2'>Home</li></Link>
-    <Link to="/apps"> <li className='m-2'>Apps</li></Link>
-    <Link to="/installation"><li className='m-2'>Installation</li></Link> 
+    <Link className='flex items-center' to="/"><FaHome /><li className='m-4'>Home</li></Link>
+    <Link className='flex items-center' to="/apps"><FaAppStore /><li className='m-2'>Apps</li></Link>
+    <Link className='flex items-center' to="/installation"><MdInstallDesktop />
+<li className='m-2'>Installation</li></Link> 
   </>
    
   return (
@@ -26,7 +31,7 @@ const Navbar = () => {
     </div>
         <div className='flex'>
           <Link to="/"><img className='w-[35px] h-[35px]' src={logoImg} alt="logo" /></Link>
-          <Link to="/"><a className="text-xl font-semibold text-[#632EE3]">HERO.IO</a></Link>
+          <Link to="/"><h3 className="text-xl font-semibold text-[#632EE3]">HERO.IO</h3></Link>
     </div>
   </div>
   <div className="navbar-center hidden lg:flex">

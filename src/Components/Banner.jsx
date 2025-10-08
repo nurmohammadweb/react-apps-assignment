@@ -1,5 +1,8 @@
 import React from 'react';
 import heroImg from '../assets/hero.png'
+import { FaAppStoreIos } from "react-icons/fa";
+import { FaGooglePlay } from "react-icons/fa";
+
 
 const Banner = () => {
   return (
@@ -9,8 +12,8 @@ const Banner = () => {
         At HERO.IO , we craft innovative apps designed to make everyday life simpler, smarter, and more exciting.Our goal is to turn your ideas into digital experiences that truly make an impact
       </p>
       <div className='items-center mb-5'>
-     <a href="https://play.google.com/"><button className='border-2 p-1 mx-2 rounded-2xl shadow-2xl font-semibold text-[10px]'>Google Play</button></a>
-     <a href="https://www.apple.com/app-store/"><button className='border-2 p-1 mx-2 rounded-2xl shadow-2xl font-semibold text-[10px]'>App Store</button></a>
+     <a href="https://play.google.com/"><button className='border-2 p-1 mx-2 rounded-2xl shadow-2xl font-semibold text-[10px]'><span className='flex gap-2 items-center'><FaGooglePlay />Google Play</span></button></a>
+     <a href="https://www.apple.com/app-store/"><button className='border-2 p-1 mx-2 rounded-2xl shadow-2xl font-semibold text-[10px]'><span className='flex gap-2 it'><FaAppStoreIos />App Store</span></button></a>
       </div>
       <div>
        <img src={heroImg} alt="" />
