@@ -12,7 +12,7 @@ const Navbar = () => {
   </>
    
   return (
-   <div className="navbar bg-base-100 mb-5">
+   <div className="navbar mb-5 w-full bg-white p-10">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -24,7 +24,10 @@ const Navbar = () => {
         {links}  
       </ul>
     </div>
-    <a className="text-xl"> <img className='w-[35px] h-[35px]' src={logoImg} alt="logo" /> HERO.IO</a>
+        <div className='flex'>
+          <Link to="/"><img className='w-[35px] h-[35px]' src={logoImg} alt="logo" /></Link>
+          <Link to="/"><a className="text-xl font-semibold text-[#632EE3]">HERO.IO</a></Link>
+    </div>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -32,7 +35,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn bg-[#632EE3] text-white"  href="https://github.com/nurmohammadweb"><FaGithub />
+    <a  className="btn bg-[#632EE3] text-white hover:underline"  href="https://github.com/nurmohammadweb"><FaGithub />
           Contribute</a>
   
   </div>

@@ -2,14 +2,17 @@ import React from 'react';
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-
+import logoImg from '../assets/logo.png'
 
 const Footer = () => {
   return (
     <footer className='bg-black'> 
       <div className='m-10 p-10'>
          <div className='flex justify-between items-center '>
-          <h1 className='text-white'>HERO.IO</h1>
+          <div className='flex gap-2'>
+            <img className='w-[25px] h-[25px]' src={logoImg} alt="" />
+            <h1 className='text-white'>HERO.IO</h1>
+         </div>
           <div>
              <h1 className='text-white text-2xl mb-2'>Social Link</h1>
              <span className='flex gap-7'>

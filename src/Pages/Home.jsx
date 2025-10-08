@@ -4,7 +4,7 @@ import Banner from '../Components/Banner';
 const Home = () => {
  
   return (
-    <div>
+    <div className='items-center'>
      <Banner></Banner>
     </div>
   );

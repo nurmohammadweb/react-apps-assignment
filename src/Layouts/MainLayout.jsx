@@ -6,9 +6,11 @@ import { Outlet } from 'react-router';
 const MainLayout = () => {
   return (
     <div className='bg-gray-50'>
-       <div className='max-w-[1200px] mx-auto'>
-      <Navbar></Navbar>
-      <Outlet></Outlet>
+       <div className=''>
+     <div> <Navbar></Navbar></div>
+        <div className='max-w-[1200px] mx-auto'>
+          <Outlet></Outlet>
+      </div>
     </div>
      <div>
         <Footer></Footer>
