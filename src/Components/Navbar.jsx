@@ -1,8 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router';
+import { FaGithub } from "react-icons/fa";
+import logoImg from '../assets/logo.png'
+
 
 const Navbar = () => {
+  const links = <>
+   <Link to="/"> <li className='m-2'>Home</li></Link>
+    <Link to="/apps"> <li className='m-2'>Apps</li></Link>
+    <Link to="/installation"><li className='m-2'>Installation</li></Link> 
+  </>
+   
   return (
-   <div className="navbar bg-base-100 shadow-sm">
+   <div className="navbar bg-base-100 mb-5">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -11,28 +21,20 @@ const Navbar = () => {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-        </li>
-        <li><a>Item 3</a></li>
+        {links}  
       </ul>
     </div>
-    <a className="text-xl">HERO.IO</a>
+    <a className="text-xl"> <img className='w-[35px] h-[35px]' src={logoImg} alt="logo" /> HERO.IO</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li>
-        <details>
-          <summary>Parent</summary>
-        </details>
-      </li>
-      <li><a>Item 3</a></li>
+       {links}
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    <a className="btn bg-[#632EE3] text-white"  href="https://github.com/nurmohammadweb"><FaGithub />
+          Contribute</a>
+  
   </div>
 </div>
   );

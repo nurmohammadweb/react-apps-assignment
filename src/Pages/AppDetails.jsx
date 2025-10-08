@@ -1,11 +1,11 @@
- import React from 'react';
- 
- const AppDetails = () => {
+import React from 'react';
+
+const AppDetails = () => {
   return (
     <div>
-      <h1>Hello AppDetails</h1>
+    <h1>AppDetails</h1>
     </div>
   );
- };
- <h1>Hello AppDetails</h1>
- export default AppDetails;
+};
+
+export default AppDetails;

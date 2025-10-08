@@ -1,20 +1,27 @@
 import React from 'react';
+import { useRouteError } from 'react-router';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
-import { Outlet } from 'react-router';
 
-const MainLayout = () => {
-  return (
+
+
+const ErrorPage = () => {
+  const error = useRouteError()
+ 
+  return (  
+    <>
     <div className='bg-gray-50'>
        <div className='max-w-[1200px] mx-auto'>
       <Navbar></Navbar>
-      <Outlet></Outlet>
+      <div>{error.message}</div>
     </div>
      <div>
         <Footer></Footer>
      </div>
    </div>
+    </>
+  
   );
 };
 
-export default MainLayout;
+export default ErrorPage;
