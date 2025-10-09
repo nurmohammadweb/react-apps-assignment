@@ -7,8 +7,22 @@ const AppDetails = () => {
   const {id} = useParams()
   const { apps, loading, error } = useApps()
   const app = apps.find(a => String(a.id) === id)
-  console.log(app);
+ 
   if (loading) return <p>Loading .....</p>
+
+  const handleAddToAppDetails = () => {
+    const existingList = JSON.parse(localStorage.getItem('install Now'))
+    
+    let updatedList = []
+    if (existingList) {
+      const isDuplicate = existingList.some(a => a.id === app.id)
+      if(isDuplicate) return alert('Already Installed')
+      updatedList = [...existingList, app]
+    } else {
+      updatedList.push(app)
+    }
+      localStorage.setItem('install Now',JSON.stringify(updatedList))
+  }
   
   return (
     <div className='bg-gray-100 max-w-full'>
@@ -39,7 +53,7 @@ const AppDetails = () => {
           </div>
        </div>
       </div>
-          <button className='border-2 p-2 rounded-2xl shadow-2xl bg text-2xl font-bold text-white bg-blue-500 mx-2'>Install Now<span className='m-2'>({app.size}MB)</span></button>
+          <button onClick={handleAddToAppDetails} className='border-2 p-2 rounded-2xl shadow-2xl bg text-2xl font-bold text-white bg-blue-500 mx-2'>Install Now<span className='m-2'>({app.size}MB)</span></button>
         </div>
       </div>
 
