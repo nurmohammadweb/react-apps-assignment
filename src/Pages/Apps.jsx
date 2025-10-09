@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useApps from '../Hooks/useApps';
 import AllAppCard from './AllAppCard';
 
 const Apps = () => {
-  const { apps } = useApps()
-  console.log(apps);
-  const allAppData = apps.slice(0, 20)
+   const { apps } = useApps()
+  const [search, setSearch] = useState('')
+ 
+  const term = search.trim().toLocaleLowerCase()
+  const searchedApps = term? apps.filter(app => app.title.toLocaleLowerCase().includes(term)):apps
+
+  
+   
+ 
+  
+  // const allAppData = apps.slice(0, 20)
   return (
     <div>
       <div className='text-center'>
@@ -13,8 +21,8 @@ const Apps = () => {
         <p className='mb-5'>Explore All Apps on the Market developed by us. We code for Millions</p>
       </div>
       <div className='flex justify-between items-center mb-7'>
-        <h3>({apps.length}) Apps Found</h3>
-        <search></search>
+        <h3>Apps Found({searchedApps.length})</h3>
+      
         <label className="input">
   <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <g
@@ -28,14 +36,14 @@ const Apps = () => {
       <path d="m21 21-4.3-4.3"></path>
     </g>
   </svg>
-  <input type="search" required placeholder="Search" />
+  <input value={search} onChange={e => setSearch(e.target.value)} type="search"  placeholder="Search App" />
 </label>
       </div>
 
       <div className='grid grid-cols-4 gap-5'>
      {
-        allAppData.map(app => 
-          <AllAppCard app={app}></AllAppCard>
+        searchedApps.map(app => 
+          <AllAppCard key={app.id} app={app}></AllAppCard>
         )   
      }
   </div>

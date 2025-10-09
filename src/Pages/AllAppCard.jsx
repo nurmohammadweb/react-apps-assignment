@@ -1,10 +1,13 @@
 import React from 'react';
 import { FaArrowCircleDown } from "react-icons/fa";
 import { CiStar } from "react-icons/ci";
+import { Link } from 'react-router';
 
-const AllAppCard = ({app}) => {
+const AllAppCard = ({ app }) => {
+  // const [id, image, title, downloads,ratingAvg]
   return (
-         <div  className="card bg-base-100 w-[275px] h-[250px] shadow-2xl ">
+    <Link to={`/appdetails/${app.id}`}>
+      <div  className="card bg-base-100 w-[275px] h-[250px] shadow-2xl ">
         <figure className="px-10 pt-10">
        <img
          src={app.image}
@@ -19,6 +22,8 @@ const AllAppCard = ({app}) => {
        </div>
        </div>
        </div>
+    </Link>
+    
   );
 };
 

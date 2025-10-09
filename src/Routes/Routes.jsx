@@ -31,7 +31,7 @@ import AppCard from "../Pages/appCard";
      
       }, 
         {
-         path: '/appdetails',
+         path: '/appdetails/:id',
          Component:AppDetails,
      
       }, 
