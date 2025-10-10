@@ -11,7 +11,7 @@ import router from './Routes/Routes.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+
     <RouterProvider router={router} />
   </StrictMode>,
 )

@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router";
 import Home from "../Pages/Home";
-import Products from "../Pages/AllAppCard";
 import MainLayout from "../Layouts/MainLayout";
 import ErrorPage from "../Pages/ErrorPage";
 import Apps from "../Pages/Apps"; 
@@ -12,7 +11,7 @@ import AppCard from "../Pages/appCard";
   {
     path: "/",
      Component: MainLayout, 
-     errorElement:ErrorPage,
+
      children: [
        {
          index: true,
@@ -34,15 +33,18 @@ import AppCard from "../Pages/appCard";
          path: '/appdetails/:id',
          Component:AppDetails,
      
-      }, 
+       }, 
+        
+      
+     
     ]
    },
-  //  {
-  //    path: '*',
-  //    Component:ErrorPage,
+     {
+          path: '*',
+        Component: ErrorPage,
      
-  //  },
-   
+     },
+  
  ]);
 
 export default router;

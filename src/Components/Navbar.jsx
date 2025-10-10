@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import { FaGithub } from "react-icons/fa";
 import logoImg from '../assets/logo.png'
 import { FaHome } from "react-icons/fa";
@@ -10,10 +10,12 @@ import { MdInstallDesktop } from "react-icons/md";
 
 const Navbar = () => {
   const links = <>
-    <Link className='flex items-center' to="/"><FaHome /><li className='m-4'>Home</li></Link>
-    <Link className='flex items-center' to="/apps"><FaAppStore /><li className='m-2'>Apps</li></Link>
-    <Link className='flex items-center' to="/installation"><MdInstallDesktop />
-<li className='m-2'>Installation</li></Link> 
+    <NavLink className={({ isActive }) => `flex items-center mx-4 font-medium ${isActive ? "text-[#632EE3] border-b-2 border-[#632EE3]" : ""}`} to="/"> <FaHome /><li className='m-2'>Home</li></NavLink>
+    
+    <NavLink className={({ isActive }) => `flex items-center mx-4 font-medium ${isActive ? "text-[#632EE3] border-b-2 border-[#632EE3]" : ""}`} to="/apps"><FaAppStore /><li className='m-2'>Apps</li></NavLink>
+    
+    <NavLink className={({ isActive }) => `flex items-center mx-4 font-medium ${isActive ? "text-[#632EE3] border-b-2 border-[#632EE3]" : ""}`}  to="/installation"><MdInstallDesktop />
+<li className='m-2'>Installation</li></NavLink> 
   </>
    
   return (
