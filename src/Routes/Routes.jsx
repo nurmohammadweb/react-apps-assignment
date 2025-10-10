@@ -17,7 +17,7 @@ import AppCard from "../Pages/appCard";
          index: true,
          path: "/",
          Component: Home,
-          loader: () => fetch('./apps.json'),  
+          loader: () => fetch('/apps.json'),  
        },
         {
          path: '/apps',
